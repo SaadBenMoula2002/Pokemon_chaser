@@ -138,7 +138,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                         mMap.addMarker(MarkerOptions()
                             .position(sydney)
                             .title("Me")
-                            .snippet("here is my location")
+                            .snippet("My power is : $myPower")
                             .icon(BitmapDescriptorFactory.fromResource(R.drawable.mario)))
                         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, 10f))
 
@@ -153,7 +153,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                                 .snippet(newPockemon.des + "," + newPockemon.power)
                                 .icon(BitmapDescriptorFactory.fromResource(newPockemon.image!!)))
 
-                            if (mylocation!!.distanceTo(newPockemon.location!!) < 10){
+                            if (mylocation!!.distanceTo(newPockemon.location!!) < 1000){
                                 myPower += newPockemon.power!!
                                 newPockemon.isCatch = true
                                 listOfPockemons[i] = newPockemon
